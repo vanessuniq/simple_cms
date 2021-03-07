@@ -1,4 +1,5 @@
 <h1>Welcome to the Hello Page</h1>
+<h3>Go back to <%= link_to('index page', "/demo/index")%></h3>
 
 <% @numbers.each do |n|%>
     <% unit = n > 1 ? 'seconds' : 'second' %>
