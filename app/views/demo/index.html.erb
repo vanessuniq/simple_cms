@@ -2,3 +2,6 @@
 
 <h3>You can visit our hello page <%= link_to("here", demo_hello_path)%></h3>
 
+<h5><%= link_to("About us", demo_about_path) %></h5>
+<h5><%= link_to("contact us", {action: "contact", country: ["us", "ca", "uk", "other"].sample}) %></h5>
+
