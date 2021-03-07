@@ -1,1 +1,6 @@
 <h1>Welcome to the Hello Page</h1>
+
+<% 5.times do |n|%>
+    <% unit = n > 1 ? 'seconds' : 'second' %>
+    <p> <%= "#{n} #{unit} passed" %> </p>
+<% end %>

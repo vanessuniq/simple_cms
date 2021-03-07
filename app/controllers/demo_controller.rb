@@ -3,7 +3,7 @@ class DemoController < ApplicationController
   end
 
   def hello
-    redirect_to action: 'index'
+    # redirect_to action: 'index'
   end
   
 end
