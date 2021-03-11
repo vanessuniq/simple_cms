@@ -1,3 +1,57 @@
 // Place all the styles related to the Subjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// General
+body {
+    background-color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+table {
+    border: 20px solid black;
+    border-radius: 10px 20px;
+}
+
+thead {
+    background-color: aquamarine;
+    font-size: medium;
+    font-weight: bold;
+}
+
+tr {
+    border: 15px solid dimgray;
+    padding: 5px;
+}
+
+th,
+td {
+    color: gray;
+    padding: 3px;
+}
+
+button {
+    background-color: aliceblue;
+    color: palevioletred;
+    margin-right: 5px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: brown;
+}
