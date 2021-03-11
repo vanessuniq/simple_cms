@@ -1,2 +1,27 @@
-<h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+<div class="show">
+    <h1>Subject: <span><%= @subject.name %></span></h1>
+    <table summary="Subject details">
+        <tr>
+            <th>Position: </th>
+            <td><%= @subject.position %></td>
+        </tr>
+        <tr>
+            <th>Visibility: </th>
+            <td><%= @subject.visible ? "visible" : "not visible" %></td>
+        </tr>
+        <tr>
+            <th>Number of pages: </th>
+            <td><%= @subject.pages.size %></td>
+        </tr>
+        
+        <% if !@subject.pages.empty? %>
+            <tr>
+                <th>Pages: </th>
+                <% @subject.pages.each do |page| %>
+                  <td><%= link_to page.name, page %></td>
+                <% end %>
+            </tr>
+        <% end %>
+        
+    </table>
+</div>

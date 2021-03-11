@@ -39,6 +39,10 @@ td {
     margin: 5px;
 }
 
+span {
+    color: brown;
+}
+
 button {
     background-color: aliceblue;
     color: palevioletred;
@@ -55,4 +59,13 @@ a {
 
 a:hover {
     color: brown;
+}
+
+// Show Page
+.show {
+    flex-direction: column;
+}
+
+.show td {
+    color: indigo;
 }
