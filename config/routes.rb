@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/new'
+  get 'pages/index'
+  get 'pages/show'
+  get 'pages/edit'
+  get 'subjects/new'
+  get 'subjects/index'
+  get 'subjects/show'
+  get 'subjects/edit'
   root 'demo#index'
   get 'demo/index'
   get 'demo/hello'
