@@ -1,13 +1,27 @@
 class SubjectsController < ApplicationController
+  # Create
   def new
-  end
 
+  end
+  def create
+
+  end
+  # Read
   def index
-  end
 
+  end
   def show
+    
   end
-
+  # Update
   def edit
+
+  end
+  def update
+    
+  end
+  # Delete
+  def destroy
+    
   end
 end
