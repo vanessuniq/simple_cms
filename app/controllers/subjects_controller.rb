@@ -4,11 +4,11 @@ class SubjectsController < ApplicationController
 
   end
   def create
-
+    
   end
   # Read
   def index
-
+    @subjects = Subject.order('position ASC')
   end
   def show
     
