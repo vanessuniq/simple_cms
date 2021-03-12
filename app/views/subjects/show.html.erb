@@ -3,26 +3,30 @@
     <h1>Subject: <span><%= @subject.name %></span></h1>
     <table summary="Subject details">
         <tr>
-            <th>Position: </th>
+            <th>Position:</th>
             <td><%= @subject.position %></td>
         </tr>
         <tr>
-            <th>Visibility: </th>
+            <th>Visibility:</th>
             <td><%= @subject.visible ? "visible" : "not visible" %></td>
         </tr>
         <tr>
-            <th>Number of pages: </th>
+            <th>Number of pages:</th>
             <td><%= @subject.pages.size %></td>
         </tr>
         
         <% if !@subject.pages.empty? %>
             <tr>
-                <th>Pages: </th>
+                <th>Pages:</th>
                 <% @subject.pages.each do |page| %>
                   <td><%= link_to page.name, page %></td>
                 <% end %>
             </tr>
         <% end %>
+        <tr>
+            <th>Date created:</th>
+            <td><%= @subject.created_at.strftime("%b %d, %Y") %></td>
+        </tr>
         
     </table><br/>
     <button><%= link_to "Return to subjects list", subjects_path %></button>
