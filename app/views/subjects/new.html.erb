@@ -1,2 +1,22 @@
-<h1>Subjects#new</h1>
-<p>Find me in app/views/subjects/new.html.erb</p>
+<div>
+    <h1>Add New Subject</h1>
+    <div class="alert"></div>
+    <%= form_for @subject do |f| %>
+       <div>
+         <%= f.label :name %>
+         <%= f.text_field :name, required: true %>
+       </div>
+       <div>
+         <%= f.label :position %>
+         <%= f.number_field :position, required: true %>
+       </div>
+       <div>
+         <%= f.label :visible %>
+         <%= f.select :visible, visible_options.collect {|item| [item[:name], item[:value]]} %>
+       </div>
+       <div>
+        <%= f.submit "Create Subject" %>
+       </div>
+
+    <% end %>
+</div>

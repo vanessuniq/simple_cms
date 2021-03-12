@@ -5,5 +5,8 @@ module SubjectsHelper
         end
         .join(" ").html_safe
     end
+    def visible_options
+        [{value: true, name: "yes"}, {value: false, name: "no"}]
+    end
     
 end

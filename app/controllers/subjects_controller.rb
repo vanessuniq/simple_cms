@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   before_action :find_subject, only: [:show, :edit, :update, :destroy]
   # Create
   def new
-
+    @subject = Subject.new
   end
   def create
     
