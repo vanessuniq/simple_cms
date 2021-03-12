@@ -61,6 +61,20 @@ a:hover {
     color: brown;
 }
 
+.notice,
+.alert {
+    opacity: 0.5;
+    color: black;
+}
+
+.notice {
+    background-color: greenyellow;
+}
+
+.alert {
+    background-color: red;
+}
+
 // Show Page
 .show {
     flex-direction: column;

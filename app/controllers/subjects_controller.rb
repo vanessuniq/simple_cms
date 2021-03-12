@@ -33,9 +33,10 @@ class SubjectsController < ApplicationController
   end
   
   def find_subject
+    session[:back] =  !request.referer ? subjects_path : request.referer
     @subject = Subject.find_by(id: params[:id])
-
-    redirect_to :back unless @subject 
+    redirect_to session.delete(:back), alert: "The queried subject does not exist" unless @subject 
+    # redirect_to session.delete(:back), alert: "The queried subject does not exist" unless @subject 
   end
   
 end
