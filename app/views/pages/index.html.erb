@@ -24,7 +24,7 @@
                 <td><%= page.visible ? "visible" : "not visible" %></td>
                 <td>
                     <%= link_to "view", page %>
-                    <%= link_to "edit", edit_page_path %>
+                    <%= link_to "edit", edit_page_path(page) %>
                     <%= link_to "delete", page, method: :delete, data: {confirm: "Would you like to delete this page?"} %>
                 </td>
               </tr>
