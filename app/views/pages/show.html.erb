@@ -1,6 +1,10 @@
 <div><%= display_message %></div>
 <div class="show">
     <h1>Page: <span><%= @page.name %></span></h1>
+    <div>
+        <button><%= link_to "Edit", edit_page_path(@page) %></button>
+        <button> <%= link_to "Delete", @page, method: :delete, data: {confirm: "Would you like to delete this page?"} %> </button>
+    </div>
     <table summary="Page details">
         <tr>
             <th>Position:</th>
