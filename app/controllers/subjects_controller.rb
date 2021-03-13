@@ -33,7 +33,8 @@ class SubjectsController < ApplicationController
   end
   # Delete
   def destroy
-    
+    @subject.destroy
+    redirect_to subjects_path, notice: "#{@subject.name} has been successfully deleted"
   end
 
   private
@@ -45,7 +46,7 @@ class SubjectsController < ApplicationController
   def find_subject
     session[:back] =  !request.referer ? subjects_path : request.referer
     @subject = Subject.find_by(id: params[:id])
-    
+
     redirect_to session.delete(:back), alert: "The queried subject does not exist" unless @subject  
   end
   
