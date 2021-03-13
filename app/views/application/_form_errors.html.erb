@@ -1,9 +1,7 @@
-<ul>
-    
-    <% if object.errors.full_messages.size > 0 %>
-        <% object.errors.full_messages.each do |error| %>
-          <%= content_tag(:li, error) %>
-        <% end %>
+<% if object.errors.full_messages.size > 0 %>
+  <ul class="alert">
+    <% object.errors.full_messages.each do |error| %>
+      <%= content_tag(:li, error) %>
     <% end %>
-    
-</ul>
+  </ul>
+<% end %>
