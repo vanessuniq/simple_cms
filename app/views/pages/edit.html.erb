@@ -1,2 +1,12 @@
-<h1>Pages#edit</h1>
-<p>Find me in app/views/pages/edit.html.erb</p>
+<div class="new">
+    <h1>Edit <span><%= "#{@page.subject.name}'s #{@page.name} page" %></span></h1>
+    <div class="alert"><%= display_form_errors(@page) %></div>
+    <div class="form">
+      <%= form_for @page do |f| %>
+        <%= render partial: "form", locals: {f: f} %>
+        <%= f.submit "Edit Page" %>
+        <%= f.button link_to("Cancel", @page), type: "button" %>
+
+      <% end %>
+    </div>
+</div>

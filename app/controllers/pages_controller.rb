@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   end
   # Update
   def edit
-
+    
   end
   def update
     
