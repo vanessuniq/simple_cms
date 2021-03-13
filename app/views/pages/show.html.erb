@@ -1,2 +1,29 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+<div><%= display_message %></div>
+<div class="show">
+    <h1>Page: <span><%= @page.name %></span></h1>
+    <table summary="Page details">
+        <tr>
+            <th>Position:</th>
+            <td><%= @page.position %></td>
+        </tr>
+        <tr>
+            <th>Visibility:</th>
+            <td><%= @subject.visible ? "visible" : "not visible" %></td>
+        </tr>
+        <tr>
+            <th>Affiliated Subject:</th>
+            <td><%= link_to @page.subject.name, @page.subject %></td>
+        </tr>
+        <tr>
+            <th>Content:</th>
+            <td><%= @page.content %></td>
+        </tr>
+        <tr>
+            <th>Date created:</th>
+            <td><%= @page.created_at.strftime("%b %d, %Y") %></td>
+        </tr>
+        
+    </table><br/>
+    <button><%= link_to "Return to pages list", pages_path %></button>
+</div>
+
