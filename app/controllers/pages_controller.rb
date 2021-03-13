@@ -21,10 +21,14 @@ class PagesController < ApplicationController
   end
   # Update
   def edit
-    
+
   end
   def update
-    
+    if @page.update(page_params)
+      redirect_to @page, notice: "#{@page.name} has been successfully updated."
+    else
+      render :edit
+    end
   end
   # Delete
   def destroy
