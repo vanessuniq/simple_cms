@@ -20,7 +20,7 @@
               <tr>
                 <td><%= page.name %></td>
                 <td><%= page.position %></td>
-                <td><%= link_to page.subject, page.subject %></td>
+                <td><%= link_to page.subject.name, page.subject %></td>
                 <td><%= page.visible ? "visible" : "not visible" %></td>
                 <td>
                     <%= link_to "view", page %>
