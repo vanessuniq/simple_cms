@@ -5,7 +5,12 @@ class SubjectsController < ApplicationController
     @subject = Subject.new
   end
   def create
-    
+    @subject = Subject.create(subject_params)
+    if @subject.save
+      render @subject
+    else
+      render :new
+    end
   end
   # Read
   def index
