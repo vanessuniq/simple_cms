@@ -32,7 +32,8 @@ class PagesController < ApplicationController
   end
   # Delete
   def destroy
-    
+    @page.destroy
+    redirect_to subject_path(@page.subject), notice: "#{@page.name} page of this subject has been successfully deleted."
   end
   
   private
