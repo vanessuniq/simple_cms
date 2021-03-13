@@ -28,6 +28,10 @@ class PagesController < ApplicationController
   
   private
   
+  def page_params
+    params.require(:page).permit(:name, :position, :visible, :content, :subject_id)
+  end
+  
   def find_page
     @page = Page.find_by(id: params[:id])
     session[:back] = !request.referer ? pages_path : request.referer
