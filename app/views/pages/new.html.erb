@@ -1,2 +1,12 @@
-<h1>Pages#new</h1>
-<p>Find me in app/views/pages/new.html.erb</p>
+<div class="new">
+    <h1>Add a New Page to <span><%= @page.subject.name %></span></h1>
+    <div class="alert"><%= display_form_errors(@page) %></div>
+    <div class="form">
+      <%= form_for @page do |f| %>
+        <%= render partial: "form", locals: {f: f} %>
+        <%= f.submit "Create Page" %>
+        <%= f.button link_to("Cancel", @page.subject), type: "button" %>
+
+      <% end %>
+    </div>
+</div>

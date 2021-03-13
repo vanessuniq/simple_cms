@@ -1,0 +1,11 @@
+<%= f.label :name %>
+<%= f.text_field :name, required: true %>
+        
+<%= f.label :position %>
+<%= f.number_field :position, required: true %>
+        
+<%= f.label :visible %>
+<%= f.select :visible, visible_options.collect {|item| [item[:name], item[:value]]} %>
+
+<%= f.label :content %>
+<%= f.text_area :content, required: true %>

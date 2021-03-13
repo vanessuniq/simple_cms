@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :find_page, only: [:show, :edit, :update, :destroy]
   # Create
   def new
-
+    @page = Page.new(subject_id: params[:subject_id])
   end
   def create
 
