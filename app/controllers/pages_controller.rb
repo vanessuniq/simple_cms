@@ -5,7 +5,12 @@ class PagesController < ApplicationController
     @page = Page.new(subject_id: params[:subject_id])
   end
   def create
-
+    @page = Page.create(page_params)
+    if @page.save
+      redirect_to @page, notice: "You have successfully added a page to #{@page.subject.name} subject"
+    else
+      render :new
+    end
   end
   # Read
   def index
