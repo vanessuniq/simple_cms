@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
   # Read
   def index
-
+    @pages = Page.order("position ASC")
   end
   def show
     

@@ -1,2 +1,33 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="new">
+    <h1>All Pages</h1>
+    <div>
+        <button><%= link_to "Home page", "/" %></button>
+        <button> <%= link_to "Subjects List", subjects_path %> </button>
+    </div> <br/>
+    <table>
+        <thead>
+            <tr>
+                <th>Pages</th>
+                <th>Position</th>
+                <th>Affiliated Subject</th>
+                <th>Visibility</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @pages.each do |page| %>
+              <tr>
+                <td><%= page.name %></td>
+                <td><%= page.position %></td>
+                <td><%= link_to page.subject, page.subject %></td>
+                <td><%= page.visible ? "visible" : "not visible" %></td>
+                <td>
+                    <%= link_to "view", page %>
+                    <%= link_to "edit", edit_page_path %>
+                    <%= link_to "delete", page, method: :delete, data: {confirm: "Would you like to delete this page?"} %>
+                </td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
