@@ -7,7 +7,7 @@ class SubjectsController < ApplicationController
   def create
     @subject = Subject.create(subject_params)
     if @subject.save
-      render @subject
+      redirect_to @subject
     else
       render :new
     end

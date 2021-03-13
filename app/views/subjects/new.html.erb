@@ -1,6 +1,6 @@
 <div class="new">
     <h1>Add New Subject</h1>
-    <div class="alert"></div>
+    <div class="alert"><%= display_form_errors(@subject) %></div>
     <div class="form">
       <%= form_for @subject do |f| %>
         
