@@ -19,12 +19,12 @@
             <td><%= link_to @page.subject.name, @page.subject %></td>
         </tr>
         <tr>
-            <th>Content:</th>
-            <td><%= @page.content %></td>
-        </tr>
-        <tr>
             <th>Date created:</th>
             <td><%= @page.created_at.strftime("%b %d, %Y") %></td>
+        </tr>
+        <tr>
+            <th>Content:</th><br/>
+            <td><%= @page.content %></td>
         </tr>
         
     </table><br/>
