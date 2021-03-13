@@ -24,6 +24,11 @@ class SubjectsController < ApplicationController
 
   end
   def update
+    if @subject.update(subject_params)
+      redirect_to @subject, notice: "#{@subject.name} subject has been successfully updated"
+    else
+      render :edit
+    end
     
   end
   # Delete
@@ -40,8 +45,8 @@ class SubjectsController < ApplicationController
   def find_subject
     session[:back] =  !request.referer ? subjects_path : request.referer
     @subject = Subject.find_by(id: params[:id])
-    redirect_to session.delete(:back), alert: "The queried subject does not exist" unless @subject 
-    # redirect_to session.delete(:back), alert: "The queried subject does not exist" unless @subject 
+    
+    redirect_to session.delete(:back), alert: "The queried subject does not exist" unless @subject  
   end
   
 end

@@ -1,2 +1,21 @@
-<h1>Subjects#edit</h1>
-<p>Find me in app/views/subjects/edit.html.erb</p>
+<div class="new">
+    <h1>Update Subject</h1>
+    <div class="alert"><%= display_form_errors(@subject) %></div>
+    <div class="form">
+      <%= form_for @subject do |f| %>
+        
+        <%= f.label :name %>
+        <%= f.text_field :name, required: true %>
+        
+        <%= f.label :position %>
+        <%= f.number_field :position, required: true, disabled: true %>
+        
+        <%= f.label :visible %>
+        <%= f.select :visible, visible_options.collect {|item| [item[:name], item[:value]]} %>
+        
+        <%= f.submit "Update Subject" %>
+        <%= f.button link_to("Cancel", subjects_path), type: "button" %>
+
+      <% end %>
+    </div>
+</div>
