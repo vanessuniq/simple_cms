@@ -12,7 +12,10 @@
         </tr>
         <tr>
             <th>Number of pages:</th>
-            <td><%= @subject.pages.size %></td>
+            <td>
+                <%= @subject.pages.size %> |***|
+                <%= link_to "Add a page", new_page_path, subject_id: @subject.id %>
+            </td>
         </tr>
         
         <% if !@subject.pages.empty? %>
